@@ -1,10 +1,10 @@
-class App {
-  run = async (name = 'Hello') => {
-    console.log(`${name} World!`);
-  }
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import App from "./components/App"
 
-const app = new App;
-app.run()
-   .then(() => console.log("done"))
-   .catch(() => console.log("Error"));
+ReactDOM.render(
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById('root'));
