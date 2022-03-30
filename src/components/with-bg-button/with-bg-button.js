@@ -1,10 +1,7 @@
 import React from 'react';
-import "./with-bg-button.scss"
+import { CommonButton } from './styles';
 
-export const WithBgButton = ({text, isBg, width = '88px'}) => {
-  let classes = "initial-but";
+export const WithBgButton = ({text, isBg, width}) => {
 
-  isBg ? classes += " with-bg-but" : null;
-
-  return <button style={{width: width}} className={classes}>{text}</button>;
+  return <CommonButton width={width} isBg={isBg}>{text}</CommonButton>;
 };

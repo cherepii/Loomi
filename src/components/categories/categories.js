@@ -1,32 +1,61 @@
-import React, {useState} from 'react';
-import { ArrowSvg } from '../svg-selector/svg-selector';
-import {CategoriesWrapper, CategoryCount, CategoriesTitle, CategoryLink, Dot} from "./styles"
+import React  from 'react';
 
-const Categories = ({categories}) => {
-  const [activeLink, setActiveLink] = useState(0); 
+import { connect } from 'react-redux';
+import { filterProducts, sortProductsByString, setSortedBy } from '../../redux/actions/sort-products';
 
-  const handleActiveLink = (index) => {
-    return activeLink === index ? 'active-link' : null
+import CategoriesItem from '../categories-item';
+import {CategoriesTitle, CategoriesWrapper} from "./styles"
+import { CATEGORIES } from './mock';
+
+                      // get data from redux store
+const Categories = ({setSortedBy, products, filter, filterProducts }) => {
+
+  const findProductsCategoryCount = (item) => {
+    const sortedProductsCount = products.filter(p => item.category === p.category).length;
+
+    const showAllPRoductsCount = products.length;
+
+    if(item.category === 'all'){
+      return showAllPRoductsCount;
+    }
+    return sortedProductsCount;
+  }
+
+  const isActiveLink = (categoryItem) => {
+    return filter === categoryItem.category ? 'active-link' : null
+  }
+
+  const handleChangeCategory = (categoryItem) => {
+    setSortedBy('') //set sorted by to default value
+    filterProducts(products, categoryItem.category)
   }
 
   return (
     <CategoriesWrapper>
       <CategoriesTitle>Categories</CategoriesTitle>
       <ul>
-        {categories.map(({name, count}, index) => {
+        {CATEGORIES.map((item) => {
           return (
-            <CategoryLink className={handleActiveLink(index)} key={name} onClick={() => setActiveLink(index)}>
-              <p className=''>{name}</p>
-              <Dot></Dot>
-              <CategoryCount>{count}</CategoryCount>
-              <ArrowSvg />
-            </CategoryLink>
+            <CategoriesItem 
+              key={item.name} 
+              category={item}
+              onCategorySelect={() => handleChangeCategory(item)}
+              isActiveLink={isActiveLink(item)}
+              count={findProductsCategoryCount(item)}
+            />
           )
         })}
       </ul>
-      
     </CategoriesWrapper>
   )
 };
 
-export default Categories;
+const mapStateToProps = state => ({
+  products: state.productList.products,
+  filteredProducts: state.productList.filteredProducts,
+  filter: state.productList.filter
+})
+
+export default connect(
+  mapStateToProps, {filterProducts, sortProductsByString, setSortedBy})
+(Categories);

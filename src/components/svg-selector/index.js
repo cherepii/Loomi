@@ -1,3 +1,7 @@
 import SvgSelector from "./svg-selector";
+import { ArrowSvg } from "./svg-selector";
 
-export default SvgSelector;
+export {
+  SvgSelector,
+  ArrowSvg
+}

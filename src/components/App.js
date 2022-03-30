@@ -1,14 +1,18 @@
 import React from 'react';
-import Menu from './menu';
-import "./app.scss"
+import { Route, Routes } from 'react-router-dom';
+
 import ProductDiscover from '../../pages/product-discover';
+import "./app.scss"
 
-
-const App = () => (
-  <div className='container'>
-    <Menu />
-    <ProductDiscover />
-  </div>
-)
+const App = () => {
+  return (
+    <div className='container'>
+      <Routes>
+        <Route path='/' element={<ProductDiscover />} />
+        <Route path='*' element={<p>404 Page not found</p>} />
+      </Routes>
+    </div>
+  )
+}
 
 export default App;

@@ -1,7 +1,7 @@
 {
-  "name": "build-sendbox",
+  "name": "loomi",
   "version": "1.0.0",
-  "description": "",
+  "description": "this app started with node v16.14.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -35,6 +35,11 @@
     "core-js": "^3.21.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-select": "^5.2.2",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
     "styled-components": "^5.3.3"
   }
 }

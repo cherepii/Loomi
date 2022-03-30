@@ -1,13 +1,18 @@
 import React from 'react';
-import Footer from "../footer"
+
+import Footer from '../footer';
+import Navbar from '../navbar';
 import { AppWrapper } from './styles';
 
 export const AppLayout = ({left, right, isLarge}) => {
   return (
-    <AppWrapper isLarge={isLarge}>
-      {left}
-      {right}
+    <>
+      <Navbar />
+      <AppWrapper isLarge={isLarge}>
+        {left}
+        {right}
+      </AppWrapper>
       <Footer />
-    </AppWrapper>
+    </>
   )
 };

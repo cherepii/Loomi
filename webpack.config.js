@@ -58,7 +58,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Build Sendbox",
+      title: "Loomi",
       buildTime: new Date().toISOString(),
       template: "public/index.html"
     }),

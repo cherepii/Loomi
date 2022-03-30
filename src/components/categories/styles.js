@@ -22,8 +22,26 @@ const CategoryLink = styled.li `
   align-items: center;
   padding: 10px 16px;
   cursor: pointer;
+  user-select: none;
+  
   & > p {
     line-height: 150%;
+  }
+
+  &.active-link {
+    background: #E09C7F;
+    transition: .3s;
+    & > p {
+      color: #fff;
+    }
+    & >span:nth-child(2) {
+      background: #fff;
+    }
+    & >span:nth-child(3) {
+      color: #FFFFFF;
+      opacity: 0.7;
+      
+    }
   }
 `;
 
