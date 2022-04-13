@@ -56,6 +56,8 @@ module.exports = {
     ],
   },
 
+  resolve: { extensions: [".js", ".ts", ".jsx", "tsx"] },
+
   plugins: [
     new HtmlWebpackPlugin({
       title: "Loomi",

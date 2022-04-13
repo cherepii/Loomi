@@ -1,3 +1,3 @@
-import CartList from "./cart-list";
+import CartList from "./CartList";
 
 export default CartList;

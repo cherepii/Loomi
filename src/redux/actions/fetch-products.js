@@ -17,14 +17,14 @@ const productsLoaded = (newProducts) => {
   }
 }
 
-const productsFetchError = (error) => {
+export const productsFetchError = (error) => {
   return {
     type: FETCH_PRODUCTS_FAILURE,
     payload: error
   }
 }
 
-export const fetchProducts = (lapiService) => () => dispatch => {
+export const fetchProducts = (lapiService) => () => (dispatch) => {
   dispatch(productsRequest());
   lapiService.getProducts()
     .then(data => dispatch(productsLoaded(data)))

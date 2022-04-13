@@ -1,5 +1,5 @@
 $primary_color: #222326;
-$primary_size: 12px;
+$default_size: 12px;
 
 @font-face {
   font-family: Montserrat;
@@ -26,7 +26,7 @@ body {
   margin: 0;
   padding: 0;
   color: $primary_color;
-  font-size: $primary_size;
+  font-size: $default_size;
   font-family: Montserrat, sans-serif;
   overflow-y: scroll;
   box-sizing: border-box;

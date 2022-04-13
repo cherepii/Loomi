@@ -4,8 +4,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import LapiService from "./services/lapi-service"
 import App from "./components/App"
-import { LapiServiceProvider } from './components/lapi-service-context';
-import ErrorBoundary from './components/error-boundary';
+import { LapiServiceProvider } from './components/contexts';
+import ErrorBoundary from './components/common/error-boundary';
 
 import { Provider } from 'react-redux';
 import store from "./redux/store"
