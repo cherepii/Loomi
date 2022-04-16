@@ -3,24 +3,24 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import LapiService from "./services/lapi-service"
-import App from "./components/App"
-import { LapiServiceProvider } from './components/contexts';
-import ErrorBoundary from './components/common/error-boundary';
-
 import { Provider } from 'react-redux';
 import store from "./redux/store"
 
+import App from "./components/App"
+import ErrorBoundary from './components/common/error-boundary';
+import { ApiContext } from './contexts/apiContext';
 
-const lapiService = new LapiService();
+
+const apiService = new LapiService();
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ErrorBoundary>
         <Router>
-          <LapiServiceProvider value={lapiService}>
+          <ApiContext.Provider value={{apiService}}>
             <App />
-          </LapiServiceProvider>
+          </ApiContext.Provider>
         </Router>
       </ErrorBoundary>
     </Provider>

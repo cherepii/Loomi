@@ -6,16 +6,18 @@ import Categories from '../src/components/categories';
 import ProductList from "../src/components/product-list"
 
 import { fetchProducts } from '../src/redux/actions/fetch-products';
-import withLapiService from '../src/components/hoc-helpers';
+import { useService } from '../src/hooks/useService';
 
-const ProductDiscover = ({ lapiService }) => {
+const ProductDiscover = () => {
+  const { apiService } = useService()
+
   const dispatch = useDispatch()
   const filteredProducts = useSelector(({productList}) => productList.filteredProducts)
   const dataFetching = useSelector(({productList}) => ({error: productList.error, loading: productList.loading}))
 
 
   useEffect(() => {
-    dispatch(fetchProducts(lapiService)(dispatch))
+    dispatch(fetchProducts(apiService)(dispatch))
   }, [])
 
   return (
@@ -33,4 +35,4 @@ const ProductDiscover = ({ lapiService }) => {
   )
 };
 
-export default withLapiService()(ProductDiscover);
+export default ProductDiscover;

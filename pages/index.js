@@ -1,4 +1,4 @@
-import ProductDiscover from "./product-discover";
+import ProductDiscover from "./ProductDiscover";
 
 export {
   ProductDiscover
