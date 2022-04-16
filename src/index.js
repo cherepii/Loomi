@@ -9,6 +9,7 @@ import store from "./redux/store"
 import App from "./components/App"
 import ErrorBoundary from './components/common/error-boundary';
 import { ApiContext } from './contexts/apiContext';
+import { GlobalStyles } from './components/GlobalStyles';
 
 
 const apiService = new LapiService();
@@ -19,6 +20,7 @@ ReactDOM.render(
       <ErrorBoundary>
         <Router>
           <ApiContext.Provider value={{apiService}}>
+            <GlobalStyles />
             <App />
           </ApiContext.Provider>
         </Router>

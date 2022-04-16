@@ -5,7 +5,7 @@ export default class LapiService {
       discount: 12,
       id: 1,
       price: 28.99,
-      imagesPerView: [ // shuild be no more then 4 images
+      imagesPerView: [ // should be no more than 4 images
         "short.png",
         "dress.png",
         "short.png",
@@ -15,7 +15,7 @@ export default class LapiService {
       supported_sizes: [
         "xs", "s"
       ],
-      colour: 'Pink',
+      color: 'Pink',
       product_details:'X Mini dress with gather at the sides. Button fastening and slightly dropped shoulder line. Wide sleeves with gathered cuffs. Vertical panels and gather in combination with voluminous sleeves visually adjust the silhouette, making it more graceful',
       height: "165cm/5'5",
       category: 'shorts',

@@ -50,7 +50,7 @@ const CartItem = ({product}) => {
         <DiscountBlock>-{discount}%</DiscountBlock>
       }
 
-      <HeartIcon isActive={isHeartActive} onClick={() => setHeartActive(true)}>
+      <HeartIcon isActive={isHeartActive} onClick={() => setHeartActive(!isHeartActive)}>
         <HeartSvg />
       </HeartIcon>
 
