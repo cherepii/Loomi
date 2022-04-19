@@ -7,7 +7,7 @@ import {
   Description
 } from "./styles"
 
-const GiftsPopup = ({closeModal}) => {
+const GiftsModal = ({closeModal}) => {
   return (
     <CommonPopup closeModal={closeModal}>
       <GiftsWrapper>
@@ -32,4 +32,4 @@ const GiftsPopup = ({closeModal}) => {
   )
 }
 
-export default GiftsPopup
+export default GiftsModal

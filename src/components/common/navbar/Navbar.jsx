@@ -2,7 +2,7 @@ import {useState} from 'react';
 
 import { SvgSelector } from '../../common/svg-selector';
 import Button from '../../ui/button';
-import {SalePopup, GiftsPopup} from '../../ui/modals';
+import RenderModal from "./RenderModal"
 
 import RenderLink from './RenderLink';
 import * as Styled from "./styles"
@@ -37,25 +37,6 @@ const Navbar = () => {
     </>
   );
 };
-
-const RenderModal = ({modal, setModal, setActiveLink}) => {
-
-  const onModalChange = () => {
-    setActiveLink(-1);
-    setModal('')
-  }
-
-  switch(modal){
-    case 'sale':
-      return <SalePopup closeModal={() => onModalChange()}/>
-    
-    case 'gifts':
-      return <GiftsPopup closeModal={() => onModalChange()}/>
-    
-    default: 
-      return null
-  }
-}
 
 
 export default Navbar;

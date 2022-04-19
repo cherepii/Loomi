@@ -3,8 +3,7 @@ import { filterProducts, setSortedBy } from '../../redux/actions/sort-products';
 
 import CategoriesItem from './categories-item';
 import {CategoriesTitle, CategoriesWrapper} from "./styles"
-import { CATEGORIES } from './mock';
-
+import { CATEGORIES } from '../../constants/static';
                       // get data from redux store
 const Categories = () => {
   const dispatch = useDispatch()

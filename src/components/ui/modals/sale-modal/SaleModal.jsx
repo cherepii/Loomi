@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import {filterProducts, filterProductsByGender, setSortedBy} from '../../../../redux/actions/sort-products'
 
 import CommonPopup from '../../../common/common-popup'
+import SaleBanner from '../../../banners/sale-banner/SaleBanner'
 import RenderCategoryItem from './RenderCategoryItem'
 
 import { MODAL_CATEGORIES } from './mock'
 
 import * as Styled from './styles'
 
-const SalePopup = ({ closeModal }) => {
-
+const SaleModal = ({ closeModal }) => {
   const dispatch = useDispatch()
   const products = useSelector(({productList}) => productList.products)
 
@@ -28,12 +28,8 @@ const SalePopup = ({ closeModal }) => {
 
   return (
     <CommonPopup isPadding closeModal={closeModal}>
-      <Styled.PopupHeader>
-        <Styled.PopupTextBlock>
-          <Styled.HeaderTitle>Get up to <span>20%</span> discount </Styled.HeaderTitle>
-          <Styled.HeaderSubtitle>Mini dress with gather at the sides. Button fastening and slightly dropped shoulder line. Wide sleeves with gathered cuffs.</Styled.HeaderSubtitle>
-        </Styled.PopupTextBlock>
-      </Styled.PopupHeader>
+      <SaleBanner />
+
       <Styled.PopupBody>
         <Styled.FlexItem>
           <Styled.Title>Shop by sex</Styled.Title>
@@ -59,4 +55,4 @@ const SalePopup = ({ closeModal }) => {
   )
 }
 
-export default SalePopup
+export default SaleModal

@@ -18,7 +18,7 @@ export const PopupBody = styled.div`
   margin-top: 70px;
   max-width: 790px;
   width: 100%;
-  padding: ${({isPadding}) => isPadding ? 0 : '32px' };
+  padding: ${({isPadding}) => isPadding ? isPadding : '32px' };
   background: #fff;
   cursor: default;
 `;

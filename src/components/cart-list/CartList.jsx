@@ -4,7 +4,6 @@ import ErrorMessage from "../common/error-boundary"
 
 const CartListContainer = ({ dataFetching, products }) => {
   const {loading, error} = dataFetching;
-  console.log(loading)
 
   if(loading) {
     return <p>loading...</p>

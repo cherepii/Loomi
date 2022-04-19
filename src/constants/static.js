@@ -15,3 +15,19 @@ export const CATEGORIES = [
   {name: 'Tops', category: 'tops'},
   {name: 'Socks, stockings, tights', category: 'socks stockings tights'}
 ]
+
+export const SHOES_CATEGORIES = [
+  {name: 'Sale', category: 'sale'},
+  {name: 'Shale', category: 'shale'},
+  {name: 'Ugg boots', category: 'ugg_boots'},
+  {name: 'Sneakers', category: 'sneakers'},
+  {name: 'Espadrilles', category: 'espadrilles'},
+  {name: 'Loafers', category: 'loafers'},
+  {name: 'Boots', category: 'boots'},
+  {name: 'Moccasins', category: 'moccasins'},
+  {name: 'Shoes', category: 'shoes'},
+  {name: 'Jumpsuits', category: 'jumpsuits'},
+  {name: 'Sandals', category: 'sandals'},
+  {name: 'Slippers', category: 'slippers'},
+  {name: 'See all', category: 'all'}
+]

@@ -1,7 +1,9 @@
-import SalePopup from "./sale-popup/SalePopup";
-import GiftsPopup from "./gifts-popup/GiftsPopup";
+import SaleModal from "./sale-modal/SaleModal";
+import GiftsModal from "./gifts-modal/GiftsModal";
+import ShoesModal from "./shoes-modal/ShoesModal";
 
 export {
-  SalePopup,
-  GiftsPopup
+  SaleModal,
+  GiftsModal,
+  ShoesModal
 }
